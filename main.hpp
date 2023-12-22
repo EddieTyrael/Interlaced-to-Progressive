@@ -15,7 +15,7 @@ typedef unsigned char u8;
 // Parameter List
 const int Height = 288;
 const int Width = 352;
-const int pixelCount = 352 * 288;
+const int pixelCount = Height * Width;
 const int nSize = pixelCount + pixelCount / 2;  // Data scale of a pixel by 4:2:0 Sampling
 const string filePath = "coastguard_cif_interlaced.yuv";
 
