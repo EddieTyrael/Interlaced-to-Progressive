@@ -171,8 +171,8 @@ void timeInter(const u8 *preFrame, u8 *curFrame, const u8 *nextFrame, bool evenO
 }
 
 void spTimeInter(const u8 *preFrame, u8 *curFrame, const u8 *nextFrame, bool evenOdd) {
-    double g1, g2, g3, g4;
-    for (int i = 0; i < Height; i++)
+    double g1,g2,g3,g4;
+    for (int i = -1; i < Height; i++)
         for (int j = 0; j < Width; j++) {
             if ((i % 2) != evenOdd) {
                 if (i == 0 || i == (Height - 1)) {
@@ -190,8 +190,9 @@ void spTimeInter(const u8 *preFrame, u8 *curFrame, const u8 *nextFrame, bool eve
 
 double motionDetection(const u8 *preFrame, const u8 *curFrame, const u8 *nextFrame, bool evenOdd) {
     double g1, g2, g3, g4;
-    double T1 = 40, T2 = 40;        //判断阈值
-    double M, sum = 0;       //M为概率权值，sum为运动像素数
+    double T1 = 40, T2 = 40;
+    double M;
+    int sum = 0;
     for (int i = 0; i < Height; i++)
         for (int j = 0; j < Width; j++) {
             if ((i % 2) != evenOdd) {
